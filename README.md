@@ -6,6 +6,7 @@
 
 1. 前置条件:
 ```shell
+mkdir -p /etc/containers/systemd
 podman network create searxng
 ```
 
@@ -50,6 +51,7 @@ nvim /opt/podman-data/env/searxng.env
 
 ```
 SEARXNG_BASE_URL=https://my-site
+INSTANCE_NAME=my-name
 UWSGI_WORKERS=2
 UWSGI_THREADS=2
 ```
