@@ -1,0 +1,13 @@
+use_default_settings: true
+server:
+  secret_key: c379f730d3bdd498af76833a45da09897966dc1a83ae0e0ae5343c00f727ce79
+  limiter: false
+  image_proxy: true
+ui:
+  static_use_hash: true
+redis:
+  url: 'redis://redis:6379/0'
+search:
+  formats:
+    - html
+    - json
