@@ -2,6 +2,9 @@
 
 [![PFM-Upstream-Sync](https://github.com/PFM-PowerForMe/searxng/actions/workflows/fork-sync.yml/badge.svg)](https://github.com/PFM-PowerForMe/searxng/actions/workflows/fork-sync.yml)
 
+## 简介
+尊重隐私的元搜索引擎.
+
 ## 如何部署?
 
 1. 前置条件:
