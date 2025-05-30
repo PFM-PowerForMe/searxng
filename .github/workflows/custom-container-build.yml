@@ -70,5 +70,5 @@ jobs:
           file: ./docker/Dockerfile
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_REPO }}/searxng:latest
-            ${{ vars.GHCR_REPO }}/searxng:latest
+            ${{ vars.DOCKERHUB_REPO }}/${{ github.event.repository.name }}:latest
+            ${{ vars.GHCR_REPO }}/${{ github.event.repository.name }}:latest
