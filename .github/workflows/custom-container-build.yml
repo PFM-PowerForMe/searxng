@@ -1,20 +1,19 @@
 name: PFM-Custom-Container-build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 permissions: {}
 
 defaults:
   run:
     shell: bash
-
-on:
-  workflow_dispatch:  # click the button on Github repo!
-
-  push:
-    branches:
-      - master
-
-  pull_request:
-    branches:
-      - master
 
 jobs:
   Custom-Container-build:
