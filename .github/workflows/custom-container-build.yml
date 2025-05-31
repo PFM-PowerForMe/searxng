@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - 'master'
   pull_request:
     branches:
-      - master
+      - 'master'
 
 permissions: {}
 
@@ -17,7 +17,7 @@ defaults:
 
 jobs:
   Custom-Container-build:
-    name: Custom-container
+    name: Build Custom Container
     permissions:
       packages: write
       contents: read
