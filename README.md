@@ -3,7 +3,7 @@
 [![PFM-Upstream-Sync](https://github.com/PFM-PowerForMe/searxng/actions/workflows/fork-sync.yml/badge.svg)](https://github.com/PFM-PowerForMe/searxng/actions/workflows/fork-sync.yml)
 
 ## 简介
-尊重隐私的元搜索引擎.
+SearXNG 是一款免费的互联网元搜索引擎，它聚合了来自各种搜索服务和数据库的结果。用户不会被追踪或分析。
 
 ## 如何部署?
 
@@ -33,6 +33,7 @@ ContainerName=valkey
 Timezone=local
 Network=searxng
 Volume=valkey-data:/data
+Exec=/usr/local/bin/valkey-server --save 30 1 --loglevel warning
 Image=ghcr.io/valkey-io/valkey:latest
 
 [Service]
