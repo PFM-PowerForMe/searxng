@@ -1,0 +1,183 @@
+use_default_settings: true
+
+general:
+  debug: false
+  privacypolicy_url: false
+  donation_url: false
+  contact_url: false
+
+server:
+  secret_key: c379f730d3bdd498af76833a45da09897966dc1a83ae0e0ae5343c00f727ce79
+  limiter: false
+  image_proxy: true
+
+ui:
+  static_use_hash: true
+  query_in_title: false
+  default_theme: simple
+  theme_args:
+    simple_style: auto
+  search_on_category_select: true
+  hotkeys: default
+  url_formatting: pretty
+  center_alignment: true
+  preferences:
+    lock:
+      - categories
+      - language
+      - autocomplete
+      - favicon
+      - safesearch
+      - method
+      - doi_resolver
+      - theme
+      - results_on_new_tab
+      - infinite_scroll
+      - search_on_category_select
+      - image_proxy
+      - query_in_title
+  
+redis:
+  url: 'redis://valkey:6379/0'
+
+search:
+  safe_search: 0
+  autocomplete: "google"
+  autocomplete_min: 4
+  favicon_resolver: "google"
+  default_lang: "auto"
+  formats:
+    - html
+    - json
+    - rss
+    - csv
+
+plugins:
+
+  searx.plugins.calculator.SXNGPlugin:
+    active: true
+
+  searx.plugins.hash_plugin.SXNGPlugin:
+    active: true
+
+  searx.plugins.self_info.SXNGPlugin:
+    active: true
+
+  searx.plugins.unit_converter.SXNGPlugin:
+    active: true
+
+  searx.plugins.ahmia_filter.SXNGPlugin:
+    active: true
+
+  searx.plugins.hostnames.SXNGPlugin:
+    active: true
+
+  searx.plugins.oa_doi_rewrite.SXNGPlugin:
+    active: true
+
+  searx.plugins.tor_check.SXNGPlugin:
+    active: true
+
+  searx.plugins.tracker_url_remover.SXNGPlugin:
+    active: true
+
+engines:
+  - name: alpine linux packages
+    engine: alpinelinux
+    disabled: false
+    shortcut: alp
+
+  - name: annas archive
+    engine: annas_archive
+    disabled: false
+    shortcut: aa
+
+  - name: apk mirror
+    engine: apkmirror
+    timeout: 4.0
+    shortcut: apkm
+    disabled: false
+
+  - name: apple app store
+    engine: apple_app_store
+    shortcut: aps
+    disabled: false
+
+  - name: nixos wiki
+    engine: mediawiki
+    shortcut: nixw
+    base_url: https://wiki.nixos.org/
+    search_type: text
+    disabled: false
+    categories: [it, software wikis]
+
+  - name: bing
+    engine: bing
+    shortcut: bi
+    disabled: false
+
+  - name: fdroid
+    engine: fdroid
+    shortcut: fd
+    disabled: false
+
+  - name: gitlab
+    engine: gitlab
+    base_url: https://gitlab.com
+    shortcut: gl
+    disabled: false
+    about:
+      website: https://gitlab.com/
+      wikidata_id: Q16639197
+
+  - name: google play apps
+    engine: google_play
+    categories: [files, apps]
+    shortcut: gpa
+    play_categ: apps
+    disabled: false
+
+  - name: crates.io
+    engine: crates
+    shortcut: crates
+    disabled: false
+    timeout: 6.0
+
+  - name: imdb
+    engine: imdb
+    shortcut: imdb
+    timeout: 6.0
+    disabled: false
+
+  - name: z-library
+    engine: zlibrary
+    shortcut: zlib
+    categories: files
+    timeout: 7.0
+    disabled: false
+
+  - name: steam
+    engine: steam
+    shortcut: stm
+    disabled: false
+
+  - name: tmdb
+    engine: xpath
+    paging: true
+    categories: movies
+    search_url: https://www.themoviedb.org/search?page={pageno}&query={query}
+    results_xpath: //div[contains(@class,"movie") or contains(@class,"tv")]//div[contains(@class,"card")]
+    url_xpath: .//div[contains(@class,"poster")]/a/@href
+    thumbnail_xpath: .//img/@src
+    title_xpath: .//div[contains(@class,"title")]//h2
+    content_xpath: .//div[contains(@class,"overview")]
+    shortcut: tm
+    disabled: false
+
+
+
+
+
+
+
+   
